@@ -1,5 +1,7 @@
 package thread;
 
+import java.util.concurrent.atomic.AtomicInteger;
+
 /**
  * @author ：wang xiaofeng
  * @date ：Created in 2023-07-31 20:33
@@ -7,7 +9,7 @@ package thread;
  */
 public class AlternatePrinting01 {
     private static final Object lock = new Object();
-    private static volatile int number = 0;
+    private static AtomicInteger number = new AtomicInteger(0);
     private static final int MAX_COUNT = 10;
 
     public static void main(String[] args) {
@@ -27,9 +29,9 @@ public class AlternatePrinting01 {
 
         @Override
         public void run() {
-            while (number < MAX_COUNT) {
+            while (number.get() < MAX_COUNT) {
                 synchronized (lock) {
-                    while (number % 2 != remainder) {
+                    while (number.get() % 2 != remainder) {
                         try {
                             lock.wait();
                         } catch (InterruptedException e) {
@@ -37,7 +39,7 @@ public class AlternatePrinting01 {
                         }
                     }
                     System.out.println(Thread.currentThread().getName()+":"+remainder);
-                    number++;
+                    number.incrementAndGet();
                     lock.notifyAll();
                 }
             }
