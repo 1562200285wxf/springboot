@@ -6,7 +6,7 @@ import java.util.Scanner;
 /**
  * @author ：wang xiaofeng
  * @date ：Created in 2023-07-31 15:47
- * @description：字符个数统计
+ * @description：  字符串中每个字符出现的个数统计
  */
 public class HJ10 {
 
