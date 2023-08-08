@@ -12,6 +12,7 @@ public class _26删除有序数组中的重复项 {
     }
 
     public static int removeDuplicates(int[] nums) {
+        //双游标 之间本来差值为1
         int slowIndex = 0;
         int length=nums.length;
         for (int fastIndex = 1; fastIndex < length; fastIndex++) {
