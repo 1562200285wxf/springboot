@@ -1,4 +1,4 @@
-package sort;
+package 代码随想录.数组;
 
 import java.util.Arrays;
 
@@ -9,24 +9,22 @@ import java.util.Arrays;
  */
 public class BinarySearch {
     public static void main(String[] args) {
-        System.out.println(binarySearch(new int[]{1,4,6,8,2},2));
+        System.out.println(binarySearch(new int[]{-1,0,3,5,9,12},2));
     }
-    public static int binarySearch(int[] num,int key){
-        Arrays.sort(num);
+    public static int binarySearch(int[] nums,int target){
         int low = 0;
-        int high = num.length-1;
+        int high = nums.length-1;
         while(low<=high){
-            int mid = low + (high-low)/2;
-            if(num[mid]<key){
+            int mid = low + (high-low)>>1;
+            if(nums[mid]<target){
                 low=mid+1;
             }
-            else if(num[mid]>key){
+            else if(nums[mid]>target){
                 high = mid-1;
             }
-            else{
+            if(nums[mid]==target)
                 return mid;
-            }
         }
-        return low;
+        return -1;
     }
 }

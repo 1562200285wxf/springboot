@@ -6,7 +6,7 @@ package huawei;
  * @description：Solution
  */
 
-class Solution {
+class Solution2 {
 
     public ListNode addTwoNumbers(ListNode l1, ListNode l2) {
         //定义一个新联表伪指针，用来指向头指针，返回结果
@@ -52,7 +52,7 @@ class Solution {
     }
 
 
-      public class ListNode {
+public class ListNode {
       int val;
       ListNode next;
       ListNode(int x) { val = x; }
