@@ -18,9 +18,11 @@ public class _203移除链表元素 {
 
 
     public static ListNode removeElements(ListNode head, int val) {
+
         ListNode dummyHead = new ListNode(0);
         dummyHead.next = head;
         ListNode temp = dummyHead;
+        //只需要构造空白节点即可。
         while (temp.next != null) {
             if (temp.next.val == val) {
                 temp.next = temp.next.next;
