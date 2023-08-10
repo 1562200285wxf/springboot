@@ -12,9 +12,8 @@ public class _203移除链表元素 {
         ListNode listNode = new ListNode(7);
         node.next = listNode;
 
-        System.out.println(removeElements(node,7));
+        System.out.println(removeElements(node, 7));
     }
-
 
 
     public static ListNode removeElements(ListNode head, int val) {
@@ -32,13 +31,22 @@ public class _203移除链表元素 {
         }
         return dummyHead.next;
     }
+
+    private static class ListNode {
+        int val;
+        ListNode next;
+
+        ListNode() {
+        }
+
+        ListNode(int val) {
+            this.val = val;
+        }
+
+        ListNode(int val, ListNode next) {
+            this.val = val;
+            this.next = next;
+        }
+    }
+
 }
-
-
- class ListNode {
-     int val;
-      ListNode next;
-      ListNode() {}
-      ListNode(int val) { this.val = val; }
-      ListNode(int val, ListNode next) { this.val = val; this.next = next; }
- }
